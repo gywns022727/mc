@@ -6,6 +6,7 @@ export default function MainText() {
 }
 
 const Text = styled.span`
+  padding: 20px;
   font-weight: 800;
   font-size: 5rem;
   background: -webkit-linear-gradient(0deg, #a2396e 0%, #354b7a 100%);

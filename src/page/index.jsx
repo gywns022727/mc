@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import MainText from "../Components/MainText";
+import MainSection from "../Components/MainSection";
 
 export default function index() {
   return (
     <Wrap>
-      <MainText />
+      <MainSection />
+      <Section />
+      <Section />
+      <Section />
+      <Section />
+      <Section />
     </Wrap>
   );
 }
 
 const Wrap = styled.div``;
 
-// const Section = styled.div``;
+const Section = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;

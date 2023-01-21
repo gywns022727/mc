@@ -5,13 +5,29 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "apple";
+    letter-spacing: -3px;
   }
   body{
-    background: #eeeeee;
+    background: #000;
+    overflow-x: hidden;
   }
+  body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #0c0c13;
+}
+
   img{
     vertical-align: middle;
   }
+
+  @font-face {
+  font-family: "apple";
+  src: url("./assets/font/Apple\ SD\ Gothic\ Neo\ Bold.ttf") format("font-ttf");
+}
 `;
 
 export default GlobalStyle;
