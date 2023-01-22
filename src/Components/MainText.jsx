@@ -15,4 +15,16 @@ const Text = styled.span`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -5px;
+
+  @media screen and (max-width: 780px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 555px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 2rem;
+  }
 `;

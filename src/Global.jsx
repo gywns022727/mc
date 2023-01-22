@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "apple";
-    letter-spacing: -3px;
+    letter-spacing: -4px;
   }
 
 body{
@@ -25,6 +25,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: #0c0c13;
   /* background: #ffffff; */
+}
+
+ul, li{
+  list-style: none;
 }
 
 img{
