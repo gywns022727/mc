@@ -14,4 +14,5 @@ const Text = styled.span`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -5px;
 `;
