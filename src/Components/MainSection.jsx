@@ -43,7 +43,7 @@ const Wrap = styled.div`
 const ImgContainer = styled.div`
   width: 1000px;
   height: 400px;
-  /* background-color: #0c1d17; */
+  background-color: #0c1d17;
   position: fixed;
   z-index: -5;
   > ul,
