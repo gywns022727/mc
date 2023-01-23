@@ -64,16 +64,4 @@ const Text = styled.p`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-
-  @media screen and (max-width: 780px) {
-    font-size: 4rem;
-  }
-
-  @media screen and (max-width: 555px) {
-    font-size: 2.5rem;
-  }
-
-  @media screen and (max-width: 350px) {
-    font-size: 2rem;
-  }
 `;

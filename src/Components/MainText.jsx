@@ -5,7 +5,7 @@ export default function MainText() {
   return <Text>우리는 MC 입니다.</Text>;
 }
 
-const Text = styled.span`
+const Text = styled.p`
   padding: 20px;
   font-weight: 800;
   font-size: 5rem;
