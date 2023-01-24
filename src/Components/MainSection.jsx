@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import MainText from "../Components/MainText";
 import ApplicationBtn from "../Components/ApplicationBtn";
 // import Bk1 from "../assets/images/bk1.png";
 // import Bk2 from "../assets/images/bk2.png";
@@ -9,39 +8,43 @@ import ApplicationBtn from "../Components/ApplicationBtn";
 export default function MainSection() {
   return (
     <Wrap>
-      <Fake />
-      <ImgContainer>
-        <ul>
-          <li>{/* <img src={Bk1} alt="bk1" /> */}</li>
-          <li>{/* <img src={Bk2} alt="bk1" /> */}</li>
-          <li>{/* <img src={Bk3} alt="bk1" /> */}</li>
-        </ul>
-      </ImgContainer>
-      <Content>
-        <MainText />
-        <SubText>저희와 함께 할래요?</SubText>
-        <ApplicationBtn />
-      </Content>
+      <Container>
+        <Fake />
+        <ImgContainer></ImgContainer>
+        <Content>
+          <MainText>우리는 MC 입니다.</MainText>
+          <SubText>저희와 함께 할래요?</SubText>
+          <ApplicationBtn />
+        </Content>
+      </Container>
     </Wrap>
   );
 }
-
 const Wrap = styled.div`
-  padding: 0 10px;
   width: 100vw;
   height: 100vh;
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  width: 1000px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 const ImgContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 400px;
-  background-color: #202721;
   position: fixed;
   z-index: -5;
-  > ul {
+  background-color: #667a8b;
+  /* > ul {
     margin: 0 auto;
     width: 1000px;
     height: 400px;
@@ -52,10 +55,11 @@ const ImgContainer = styled.div`
       width: 100%;
       height: 50vh;
     }
-  }
+  } */
 
-  @media screen and (max-width: 1000px) {
-    width: 100%;
+  @media screen and (max-width: 1050px) {
+    width: 100vw;
+
     height: 50vh;
   }
 `;
@@ -64,7 +68,7 @@ const Fake = styled.div`
   width: 1000px;
   height: 400px;
   @media screen and (max-width: 1000px) {
-    width: 100%;
+    width: 100vw;
     height: 50vh;
   }
 `;
@@ -78,13 +82,41 @@ const Content = styled.div`
   z-index: 5;
 `;
 
+const MainText = styled.p`
+  padding: 20px;
+  font-weight: 800;
+  font-size: 5rem;
+  background: -webkit-linear-gradient(0deg, #a2396e 0%, #354b7a 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -5px;
+
+  @media screen and (max-width: 780px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 555px) {
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 2rem;
+  }
+`;
+
 const SubText = styled.p`
   font-weight: 450;
-  font-size: 32px;
+  font-size: 3rem;
   color: #eee;
   text-align: center;
 
   @media screen and (max-width: 1000px) {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  @media screen and (max-width: 555px) {
+    font-size: 1.4rem;
   }
 `;

@@ -9,17 +9,17 @@ export default function index() {
     <Wrap>
       <MainSection />
       <TextSection />
+      {/* <Section /> */}
+      {/* <Section /> */}
       <HopeSection />
-      <Section />
-      <Section />
     </Wrap>
   );
 }
 
 const Wrap = styled.div``;
 
-const Section = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-`;
+// const Section = styled.div`
+//   width: 100vw;
+//   height: 100vh;
+//   background: #000;
+// `;
