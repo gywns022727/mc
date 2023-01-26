@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 export default function ApplicationBtn() {
+  const navigate = useNavigate();
   const click = () => {
-    window.location.href = "";
+    navigate("/form");
   };
 
   return <Btn onClick={click}>입부 신청하기</Btn>;
