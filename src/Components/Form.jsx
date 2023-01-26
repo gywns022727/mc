@@ -10,7 +10,7 @@ export default function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { isSubmitting, errors },
   } = useForm();
 
   const navigate = useNavigate();
@@ -35,13 +35,18 @@ export default function Form() {
 
   const onSubmit = async (data) => {
     notify();
-    await new Promise((r) => setTimeout(r, 2000));
-    handleLinkOnClick(true);
+    console.log(data);
+    // await new Promise((r) => setTimeout(r, 2000));
+    // handleLinkOnClick(true);
   };
 
   return (
     <Wrap>
-      <form action="" method="post" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        // action="https://192b-2001-2d8-e2b1-c8a7-f034-b48e-fe54-c46c.jp.ngrok.io/signup"
+        method="post"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <label>
           <Text>이름</Text>
           <Input
@@ -119,7 +124,7 @@ export default function Form() {
               "개인정보 수집에 동의 하십니까?"}
           </Error>
         </label>
-        <Submit type="submit" value="신청 하기" />
+        <Submit type="submit" value="신청 하기" disabled={isSubmitting} />
         <ToastContainer
           position="top-center"
           autoClose={800}
@@ -197,6 +202,10 @@ const Check = styled.input`
   width: 15px;
   height: 15px;
   margin-right: 10px;
+  :focus {
+    outline: none;
+    border: none;
+  }
 `;
 
 const CheckText = styled.span`
