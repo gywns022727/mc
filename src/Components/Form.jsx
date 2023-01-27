@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,8 +14,8 @@ export default function Form() {
     formState: { isSubmitting, errors },
   } = useForm();
 
-  const navigate = useNavigate();
-  const handleLinkOnClick = (status) => navigate("/", { state: status });
+  // const navigate = useNavigate();
+  // const handleLinkOnClick = (status) => navigate("/", { state: status });
 
   const handleNumber = (e) => {
     const { value } = e.target;

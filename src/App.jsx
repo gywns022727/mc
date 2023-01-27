@@ -1,6 +1,7 @@
 import Global from "./Global";
 import Index from "./page/index";
 import Form from "./page/formpage";
+import Notfound from "./page/Notfound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/form" element={<Form />} />
-          {/* <Route path="/*" element={<Notfound />} /> */}
+          <Route path="/*" element={<Notfound />} />
         </Routes>
       </BrowserRouter>
     </div>
