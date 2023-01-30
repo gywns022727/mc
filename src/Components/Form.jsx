@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import sendFormData from ".././api/sendFormData";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,8 +14,9 @@ export default function Form() {
     formState: { isSubmitting, errors },
   } = useForm();
 
-  // const navigate = useNavigate();
-  // const handleLinkOnClick = (status) => navigate("/", { state: status });
+  let check = useRef(false);
+
+  const navigate = useNavigate();
 
   const handleNumber = (e) => {
     const { value } = e.target;
@@ -34,20 +35,28 @@ export default function Form() {
     }
   }, [phone]);
 
-  const onSubmit = async (data) => {
-    notify();
-    console.log(data);
-    // await new Promise((r) => setTimeout(r, 2000));
-    // handleLinkOnClick(true);
+  const handleLinkOnClick = async (data) => {
+    if (!check.current) {
+      check.current = true;
+      let sendData = await sendFormData({ ...data });
+      console.log(sendData);
+      if (sendData.status === 200) {
+        notify();
+        await new Promise((r) => setTimeout(r, 2000));
+        navigate("/", { state: data.name }); // data.name 왜 들어가는지 모르겠음 그리고 handleLinkonClick 함수 동작 원리 분석하기
+      } else {
+        check.current = false;
+      }
+    }
+  };
+
+  const onSubmit = (data) => {
+    handleLinkOnClick(data);
   };
 
   return (
     <Wrap>
-      <form
-        // action="https://192b-2001-2d8-e2b1-c8a7-f034-b48e-fe54-c46c.jp.ngrok.io/signup"
-        method="post"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form method="post" onSubmit={handleSubmit(onSubmit)}>
         <label>
           <Text>이름</Text>
           <Input
