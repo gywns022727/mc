@@ -3,6 +3,13 @@ import styled from "styled-components";
 
 export default function TextSection() {
   const [scroll, setScroll] = useState(0);
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
+  // https://til.mmyeon.com/intersection-observer/
 
   const onScroll = () => {
     // console.log(window.scrollY);

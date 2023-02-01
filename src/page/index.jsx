@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MainSection from "../Components/MainSection";
 import TextSection from "../Components/TextSection";
+import ImageSection from "../Components/ImageSection";
 import HopeSection from "../Components/HopeSection";
 
 export default function index() {
@@ -9,8 +10,7 @@ export default function index() {
     <Wrap>
       <MainSection />
       <TextSection />
-      {/* <Section /> */}
-      {/* <Section /> */}
+      <ImageSection />
       <HopeSection />
     </Wrap>
   );
