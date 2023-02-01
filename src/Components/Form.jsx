@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loding from "./animation/LodingAnimation/index";
 
 export default function Form() {
   const notify = () => toast.success("신청이 완료되었습니다.");
@@ -37,14 +38,13 @@ export default function Form() {
 
   const handleLinkOnClick = async (data) => {
     if (!check.current) {
-      console.log("fghjk");
       check.current = true;
       let sendData = await sendFormData({ ...data });
       console.log(sendData);
       if (sendData.status === 200) {
         notify();
         await new Promise((r) => setTimeout(r, 2000));
-        navigate("/"); // data.name 왜 들어가는지 모르겠음 그리고 handleLinkonClick 함수 동작 원리 분석하기
+        navigate("/");
       } else {
         check.current = false;
       }
@@ -56,106 +56,140 @@ export default function Form() {
   };
 
   return (
-    <Wrap>
-      <form method="post" onSubmit={handleSubmit(onSubmit)}>
-        <label>
-          <Text>이름</Text>
-          <Input
-            type="text"
-            name="name"
-            autoComplete="off"
-            placeholder="이름을 입력해주세요."
-            maxLength={6}
-            {...register("name", {
-              required: true,
-              minLength: 2,
-            })}
-          />
-          {errors.name && errors.name.type === "required" && (
-            <Error>이름을 입력해주세요.</Error>
-          )}
-          {errors.name && errors.name.type === "minLength" && (
-            <Error>이름을 올바르지 않습니다</Error>
-          )}
-        </label>
-        <label>
-          <Text>학번</Text>
-          <Input
-            type="text"
-            name="number"
-            autoComplete="off"
-            placeholder="학번을 입력해주세여.(ex. 10301)"
-            maxLength={5}
-            {...register("number", {
-              required: true,
-              minLength: 5,
-            })}
-          />
-          {errors.number && errors.number.type === "required" && (
-            <Error>학번을 입력해주세요.</Error>
-          )}
-          {errors.number && errors.number.type === "minLength" && (
-            <Error>학번이 올바르지 않습니다.</Error>
-          )}
-        </label>
-        <label>
-          <Text>전화번호</Text>
-          <Input
-            type="text"
-            name="phone"
-            autoComplete="off"
-            placeholder="전화번호를 입력해주세요.(숫자만)"
-            value={phone || ""}
-            minLength={13}
-            maxLength={13}
-            {...register("phone", {
-              required: true,
-              onChange: (e) => {
-                handleNumber(e);
-              },
-            })}
-          />
-          {errors.phone && errors.phone.type === "required" && (
-            <Error>전화번호를 입력해주세요.</Error>
-          )}
-        </label>
-        <label>
-          <CheckBox>
-            <Check
-              type="checkbox"
-              name="check"
-              {...register("checkbox", {
+    <>
+      <LodingContainer ref={check} />
+      <Wrap>
+        <Header>입부 신청</Header>
+        <form method="post" onSubmit={handleSubmit(onSubmit)}>
+          <label>
+            <Text>이름</Text>
+            <Input
+              type="text"
+              name="name"
+              autoComplete="off"
+              placeholder="이름을 입력해주세요."
+              maxLength={6}
+              {...register("name", {
                 required: true,
+                minLength: 2,
               })}
             />
-            <CheckText>개인정보 수집 동의</CheckText>
-          </CheckBox>
-          <Error>
-            {errors.checkbox?.type === "required" &&
-              "개인정보 수집에 동의 하십니까?"}
-          </Error>
-        </label>
-        <Submit type="submit" value="신청 하기" disabled={isSubmitting} />
-        <ToastContainer
-          position="top-center"
-          autoClose={800}
-          limit={1}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss={false}
-          draggable={false}
-          pauseOnHover={false}
-          theme="light"
-        />
-      </form>
-      <p>확인 후 연락드릴 예정입니다.</p>
-    </Wrap>
+            {errors.name && errors.name.type === "required" && (
+              <Error>이름을 입력해주세요.</Error>
+            )}
+            {errors.name && errors.name.type === "minLength" && (
+              <Error>이름을 올바르지 않습니다</Error>
+            )}
+          </label>
+          <label>
+            <Text>학번</Text>
+            <Input
+              type="text"
+              name="number"
+              autoComplete="off"
+              placeholder="학번을 입력해주세여.(ex. 10301)"
+              maxLength={5}
+              {...register("number", {
+                required: true,
+                minLength: 5,
+              })}
+            />
+            {errors.number && errors.number.type === "required" && (
+              <Error>학번을 입력해주세요.</Error>
+            )}
+            {errors.number && errors.number.type === "minLength" && (
+              <Error>학번이 올바르지 않습니다.</Error>
+            )}
+          </label>
+          <label>
+            <Text>전화번호</Text>
+            <Input
+              type="text"
+              name="phone"
+              autoComplete="off"
+              placeholder="전화번호를 입력해주세요.(숫자만)"
+              value={phone || ""}
+              minLength={13}
+              maxLength={13}
+              {...register("phone", {
+                required: true,
+                onChange: (e) => {
+                  handleNumber(e);
+                },
+              })}
+            />
+            {errors.phone && errors.phone.type === "required" && (
+              <Error>전화번호를 입력해주세요.</Error>
+            )}
+          </label>
+          <label>
+            <CheckBox>
+              <Check
+                type="checkbox"
+                name="check"
+                {...register("checkbox", {
+                  required: true,
+                })}
+              />
+              <CheckText>개인정보 수집 동의</CheckText>
+            </CheckBox>
+            <Error>
+              {errors.checkbox?.type === "required" &&
+                "개인정보 수집에 동의 하십니까?"}
+            </Error>
+          </label>
+          <Submit type="submit" value="신청 하기" disabled={isSubmitting} />
+          <ToastContainer
+            position="top-center"
+            autoClose={800}
+            limit={1}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss={false}
+            draggable={false}
+            pauseOnHover={false}
+            theme="light"
+          />
+        </form>
+        <p>확인 후 연락드릴 예정입니다.</p>
+      </Wrap>
+    </>
   );
 }
 
+const LodingContainer = React.forwardRef((props, check) => {
+  return (
+    <>
+      {check.current ? (
+        <LodingContent>
+          <Loding />
+        </LodingContent>
+      ) : null}
+    </>
+  );
+});
+
+const LodingContent = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Wrap = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
   > form {
     display: flex;
     flex-direction: column;
@@ -171,6 +205,18 @@ const Wrap = styled.div`
     color: #9d9d9d;
     letter-spacing: -2px;
   }
+`;
+
+const Header = styled.span`
+  text-align: center;
+  font-weight: 800;
+  font-size: 3rem;
+  background: -webkit-linear-gradient(0deg, #a2396e 0%, #354b7a 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -5px;
 `;
 
 const Text = styled.p`
@@ -196,7 +242,7 @@ const Input = styled.input`
   }
 
   @media screen and (max-width: 290px) {
-    width: 260px;
+    width: 240px;
   }
 `;
 

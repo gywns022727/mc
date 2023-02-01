@@ -1,6 +1,6 @@
 import Global from "./Global";
 import Index from "./page/index";
-import Form from "./page/formpage";
+import Form from "./page/Formpage";
 import Notfound from "./page/Notfound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

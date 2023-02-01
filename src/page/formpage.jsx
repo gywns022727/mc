@@ -1,15 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../Components/Header";
 import Form from "../Components/Form";
 
 export default function index() {
   return (
     <Wrap>
-      <div>
-        <Header />
-        <Form />
-      </div>
+      <Form />
     </Wrap>
   );
 }
