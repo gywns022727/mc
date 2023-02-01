@@ -37,13 +37,14 @@ export default function Form() {
 
   const handleLinkOnClick = async (data) => {
     if (!check.current) {
+      console.log("fghjk");
       check.current = true;
       let sendData = await sendFormData({ ...data });
       console.log(sendData);
       if (sendData.status === 200) {
         notify();
         await new Promise((r) => setTimeout(r, 2000));
-        navigate("/", { state: data.name }); // data.name 왜 들어가는지 모르겠음 그리고 handleLinkonClick 함수 동작 원리 분석하기
+        navigate("/"); // data.name 왜 들어가는지 모르겠음 그리고 handleLinkonClick 함수 동작 원리 분석하기
       } else {
         check.current = false;
       }
