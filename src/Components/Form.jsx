@@ -206,6 +206,9 @@ const Wrap = styled.div`
     color: #9d9d9d;
     letter-spacing: -2px;
   }
+  @media screen and (max-height: 500px) {
+    height: 100%;
+  }
 `;
 
 const Header = styled.span`
