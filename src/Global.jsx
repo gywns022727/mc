@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: "apple";
-    letter-spacing: -3px;
+    letter-spacing: -1px;
   }
 
 body{

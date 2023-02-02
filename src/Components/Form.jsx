@@ -42,6 +42,7 @@ export default function Form() {
       let sendData = await sendFormData({ ...data });
       console.log(sendData);
       if (sendData.status === 200) {
+        window.scrollTo(0, 0);
         notify();
         await new Promise((r) => setTimeout(r, 2000));
         navigate("/");
