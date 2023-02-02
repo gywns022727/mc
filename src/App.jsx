@@ -1,6 +1,6 @@
 import Global from "./Global";
 import Index from "./page/index";
-import Form from "./page/Formpage";
+import Form from "./page/TFormpage";
 import Notfound from "./page/Notfound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="App">
       <Global />
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
