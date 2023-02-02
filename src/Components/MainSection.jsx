@@ -80,6 +80,18 @@ const Content = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 5;
+
+  animation-name: opacity;
+  animation-duration: 3000ms;
+
+  @keyframes opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 const MainText = styled.p`

@@ -1,46 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
+// https://velog.io/@dishate/%ED%99%94%EB%A9%B4%EC%97%90-%EB%93%A4%EC%96%B4%EC%99%94%EC%9D%84-%EB%95%8C-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EB%8F%99%EC%9E%91%ED%95%98%EA%B8%B0-react-IntersectionObserver
+
 export default function TextSection() {
-  const [scroll, setScroll] = useState(0);
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-  // https://til.mmyeon.com/intersection-observer/
-
-  const onScroll = () => {
-    // console.log(window.scrollY);
-    setScroll(window.scrollY);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
   return (
     <Wrap>
       <Container>
-        {/* <Text>MC는 전공심화 동아리 입니다.&#x2004;</Text>
+        <Text>MC는 전공심화 동아리 입니다.&#x2004;</Text>
         <Text>MC는 함께하는 동아리 입니다.&#x2004;</Text>
         <Text>MC는 같이하는 동아리 입니다.&#x2004;</Text>
-        <Text>MC는 가족같은 동아리 입니다.&#x2004;</Text> */}
-        <Text style={{ opacity: (scroll - 600) / 10 }}>
-          MC는 전공심화 동아리 입니다.&#x2004;
-        </Text>
-        <Text style={{ opacity: (scroll - 700) / 10 }}>
-          MC는 함께하는 동아리 입니다.&#x2004;
-        </Text>
-        <Text style={{ opacity: (scroll - 800) / 10 }}>
-          MC는 같이하는 동아리 입니다.&#x2004;
-        </Text>
-        <Text style={{ opacity: (scroll - 900) / 10 }}>
-          MC는 가족같은 동아리 입니다.&#x2004;
-        </Text>
+        <Text>MC는 가족같은 동아리 입니다.&#x2004;</Text>
       </Container>
     </Wrap>
   );
