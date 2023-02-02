@@ -37,19 +37,19 @@ export default function Form() {
   }, [phone]);
 
   const handleLinkOnClick = async (data) => {
-    if (!check.current) {
-      check.current = true;
-      let sendData = await sendFormData({ ...data });
-      console.log(sendData);
-      if (sendData.status === 200) {
-        window.scrollTo(0, 0);
-        notify();
-        await new Promise((r) => setTimeout(r, 2000));
-        navigate("/");
-      } else {
-        check.current = false;
-      }
-    }
+    window.scrollTo(0, 0);
+    notify();
+    // if (!check.current) {
+    //   check.current = true;
+    //   let sendData = await sendFormData({ ...data });
+    //   console.log(sendData);
+    //   if (sendData.status === 200) {
+    //     await new Promise((r) => setTimeout(r, 2000));
+    //     navigate("/");
+    //   } else {
+    //     check.current = false;
+    //   }
+    // }
   };
 
   const onSubmit = (data) => {
