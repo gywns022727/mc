@@ -1,16 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-
-// https://velog.io/@dishate/%ED%99%94%EB%A9%B4%EC%97%90-%EB%93%A4%EC%96%B4%EC%99%94%EC%9D%84-%EB%95%8C-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EB%8F%99%EC%9E%91%ED%95%98%EA%B8%B0-react-IntersectionObserver
+import { InView, useInView } from "react-intersection-observer";
 
 export default function TextSection() {
+  const {} = useInView();
+
+  const Scroll = async () => {
+    const test0 = document.getElementsByClassName("text")[0];
+    const test1 = document.getElementsByClassName("text")[1];
+    const test2 = document.getElementsByClassName("text")[2];
+    const test3 = document.getElementsByClassName("text")[3];
+    test0.style.opacity = 1;
+    await new Promise((r) => setTimeout(r, 850));
+    test1.style.opacity = 1;
+    await new Promise((r) => setTimeout(r, 850));
+    test2.style.opacity = 1;
+    await new Promise((r) => setTimeout(r, 850));
+    test3.style.opacity = 1;
+  };
+
   return (
     <Wrap>
       <Container>
-        <Text>MC는 전공심화 동아리 입니다.&#x2004;</Text>
-        <Text>MC는 함께하는 동아리 입니다.&#x2004;</Text>
-        <Text>MC는 같이하는 동아리 입니다.&#x2004;</Text>
-        <Text>MC는 가족같은 동아리 입니다.&#x2004;</Text>
+        <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
+          <Text className="text">MC는 전공심화 동아리 입니다.&#x2004;</Text>
+          <Text className="text">MC는 함께하는 동아리 입니다.&#x2004;</Text>
+          <Text className="text">MC는 같이하는 동아리 입니다.&#x2004;</Text>
+          <Text className="text">MC는 가족같은 동아리 입니다.&#x2004;</Text>
+        </InView>
       </Container>
     </Wrap>
   );

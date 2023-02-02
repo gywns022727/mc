@@ -1,21 +1,18 @@
-// import React, { useEffect, useState } from "react";
-
 import React from "react";
 import styled from "styled-components";
+import { InView, useInView } from "react-intersection-observer";
 
 export default function HopeSection() {
-  // const [scroll, setScroll] = useState(0);
+  const {} = useInView();
 
-  // const onScroll = () => {
-  //   // console.log(window.scrollY);
-  //   setScroll(window.scrollY);
-  // };
-  // useEffect(() => {
-  //   window.addEventListener("scroll", onScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", onScroll);
-  //   };
-  // }, []);
+  const Scroll = async () => {
+    const box0 = document.getElementsByClassName("box")[0];
+    const box1 = document.getElementsByClassName("box")[1];
+    const box2 = document.getElementsByClassName("box")[2];
+    box0.style.opacity = 1;
+    box1.style.opacity = 1;
+    box2.style.opacity = 1;
+  };
 
   return (
     <Wrap>
@@ -24,29 +21,28 @@ export default function HopeSection() {
           <TextBox>
             <Text>이런 친구가 왔으면 좋겠어요!&#x2004;&#x2004;</Text>
           </TextBox>
-          <div>
-            <Box>
-              {/* style={{ opacity: (scroll - 3900) / 10 }} */}
-              <div>
-                <h3>끈기있는 사람</h3>
-                <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
-              </div>
-            </Box>
-            <Box>
-              {/* style={{ opacity: (scroll - 3900) / 10 }} */}
-              <div>
-                <h3>끈기있는 사람</h3>
-                <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
-              </div>
-            </Box>
-            <Box>
-              {/* style={{ opacity: (scroll - 3900) / 10 }} */}
-              <div>
-                <h3>끈기있는 사람</h3>
-                <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
-              </div>
-            </Box>
-          </div>
+          <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
+            <ContentBox>
+              <Box>
+                <div className="box">
+                  <h3>끈기있는 사람</h3>
+                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
+                </div>
+              </Box>
+              <Box>
+                <div className="box">
+                  <h3>끈기있는 사람</h3>
+                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
+                </div>
+              </Box>
+              <Box>
+                <div className="box">
+                  <h3>끈기있는 사람</h3>
+                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
+                </div>
+              </Box>
+            </ContentBox>
+          </InView>
         </Content>
       </Container>
     </Wrap>
@@ -75,14 +71,13 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
 
-  > div {
-    display: flex;
-    align-items: center;
-
-    @media screen and (max-width: 1100px) {
-      flex-direction: column;
-    }
+const ContentBox = styled.div`
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
   }
 `;
 
@@ -133,7 +128,8 @@ const Box = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transition: 0.3s;
+    transition: 2s;
+    opacity: 0;
   }
 
   > div > h3 {

@@ -53,11 +53,6 @@ const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000000;
-  /* 
-  @media screen and (max-width: 400px) {
-    width: calc(100% - 50px);
-    height: 250px;
-  } */
 `;
 
 const Container = styled.div`
