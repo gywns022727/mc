@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Form from "../Components/Form";
+import Form from "../Components/FormSection";
 
 export default function index() {
   return (

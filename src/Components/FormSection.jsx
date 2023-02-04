@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import sendFormData from ".././api/sendFormData";
+import sendFormData from "../api/sendFormData";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
@@ -123,22 +123,6 @@ export default function Form() {
               <Error>전화번호를 입력해주세요.</Error>
             )}
           </label>
-          <label>
-            <CheckBox>
-              <Check
-                type="checkbox"
-                name="check"
-                {...register("checkbox", {
-                  required: true,
-                })}
-              />
-              <CheckText>개인정보 수집 동의</CheckText>
-            </CheckBox>
-            <Error>
-              {errors.checkbox?.type === "required" &&
-                "개인정보 수집에 동의 하십니까?"}
-            </Error>
-          </label>
           <Submit type="submit" value="신청 하기" disabled={isSubmitting} />
           <ToastContainer
             position="top-center"
@@ -250,32 +234,8 @@ const Input = styled.input`
   }
 `;
 
-const CheckBox = styled.div`
-  margin-top: 20px;
-  width: 100%;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const Check = styled.input`
-  width: 15px;
-  height: 15px;
-  margin-right: 10px;
-  :focus {
-    outline: none;
-    border: none;
-  }
-`;
-
-const CheckText = styled.span`
-  color: #fff;
-  letter-spacing: -2px;
-`;
-
 const Submit = styled.input`
-  margin: 15px 0;
+  margin: 20px 0;
   width: 200px;
   height: 50px;
   font-weight: 500;

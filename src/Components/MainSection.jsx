@@ -1,11 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import ApplicationBtn from "../Components/ApplicationBtn";
+import { useNavigate } from "react-router-dom";
 // import Bk1 from "../assets/images/bk1.png";
 // import Bk2 from "../assets/images/bk2.png";
 // import Bk3 from "../assets/images/bk3.png";
 
 export default function MainSection() {
+  const navigate = useNavigate();
+  const click = () => {
+    navigate("/privacy");
+  };
   return (
     <Wrap>
       <Container>
@@ -14,7 +18,7 @@ export default function MainSection() {
         <Content>
           <MainText>우리는 MC 입니다.</MainText>
           <SubText>저희와 함께 할래요?</SubText>
-          <ApplicationBtn />
+          <Btn onClick={click}>입부 신청하기</Btn>
         </Content>
       </Container>
     </Wrap>
@@ -59,7 +63,6 @@ const ImgContainer = styled.div`
 
   @media screen and (max-width: 1050px) {
     width: 100vw;
-
     height: 50vh;
   }
 `;
@@ -130,5 +133,35 @@ const SubText = styled.p`
 
   @media screen and (max-width: 555px) {
     font-size: 1.4rem;
+  }
+`;
+
+const Btn = styled.button`
+  margin-top: 30px;
+  width: 250px;
+  height: 70px;
+  background: #483f89;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  color: #eeeeee;
+  cursor: pointer;
+
+  @media screen and (max-width: 780px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 555px) {
+    width: 180px;
+    height: 60px;
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: 350px) {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
   }
 `;

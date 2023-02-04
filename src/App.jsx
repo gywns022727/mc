@@ -1,6 +1,7 @@
 import Global from "./Global";
 import Index from "./page/index";
-import Form from "./page/TFormpage";
+import Privacy from "./page/Privacy";
+import Form from "./page/Formpage";
 import Notfound from "./page/Notfound";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/form" element={<Form />} />
           <Route path="/*" element={<Notfound />} />
         </Routes>
