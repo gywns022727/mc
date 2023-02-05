@@ -1,58 +1,51 @@
 import React from "react";
 import styled from "styled-components";
+import { InView, useInView } from "react-intersection-observer";
 
 export default function ImageSection() {
+  useInView();
+
+  const Scroll = async () => {
+    const img = document.getElementsByClassName("img")[0];
+    img.style.opacity = 1;
+  };
+
   return (
     <Wrap>
       <Container>
-        <Img1></Img1>
         <ImgBox>
-          <Img2></Img2>
-          <Img3></Img3>
+          <Text>
+            MC<span></span>
+          </Text>
+          <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
+            <div className="img">
+              <div>
+                <Img></Img>
+                <Img className="center"></Img>
+                <Img></Img>
+              </div>
+              <div>
+                <Img></Img>
+                <Img className="center"></Img>
+                <Img></Img>
+              </div>
+              <div>
+                <Img></Img>
+                <Img className="center"></Img>
+                <Img></Img>
+              </div>
+            </div>
+          </InView>
         </ImgBox>
       </Container>
     </Wrap>
   );
 }
 
-const Img1 = styled.div`
-  width: 900px;
-  height: 350px;
-  background-color: #eeeeee;
-
-  @media screen and (max-width: 1000px) {
-    width: calc(100% - 100px);
-    height: 250px;
-  }
-
-  @media screen and (max-width: 400px) {
-    width: calc(100% - 50px);
-  }
-`;
-
-const Img2 = styled.div`
-  width: 430px;
-  height: 350px;
-  background-color: #eeeeee;
-  @media screen and (max-width: 1000px) {
-    width: 100%;
-    height: 250px;
-  }
-`;
-
-const Img3 = styled.div`
-  width: 430px;
-  height: 350px;
-  background-color: #eeeeee;
-  @media screen and (max-width: 1000px) {
-    display: none;
-  }
-`;
-
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #000000;
+  background-color: #000;
 `;
 
 const Container = styled.div`
@@ -70,19 +63,86 @@ const Container = styled.div`
 `;
 
 const ImgBox = styled.div`
-  margin-top: 25px;
-  width: 900px;
-  height: 350px;
+  width: auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  > div {
+    > .img {
+      transition: 2s;
+      opacity: 0;
+      > div {
+        margin: 10px 0;
+        display: flex;
+        > .center {
+          margin: 0 20px;
+          @media screen and (max-width: 300px) {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+  }
+`;
 
-  @media screen and (max-width: 1000px) {
-    width: calc(100% - 100px);
-    height: 250px;
-    flex-wrap: wrap;
+const Text = styled.h2`
+  padding-bottom: 10px;
+  font-size: 3rem;
+  background: -webkit-linear-gradient(0deg, #a2396e 0%, #354b7a 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 75px);
+    height: 1px;
+    background-color: #ebebeb;
+    @media screen and (max-width: 300px) {
+      width: calc(100% - 62px);
+    }
   }
 
-  @media screen and (max-width: 400px) {
-    width: calc(100% - 50px);
+  @media screen and (max-width: 300px) {
+    font-size: 2.5rem;
+  }
+
+  > span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 1px;
+    background-color: #a2396e;
+    z-index: 10;
+  }
+`;
+
+const Img = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: #3e3844;
+
+  @media screen and (max-width: 750px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media screen and (max-width: 360px) {
+    width: 80px;
+    height: 80px;
   }
 `;

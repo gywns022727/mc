@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
 
 export default function HopeSection() {
-  const {} = useInView();
+  useInView();
 
   const Scroll = async () => {
     const box0 = document.getElementsByClassName("box")[0];
