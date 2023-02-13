@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
+import img1 from "../assets/images/img1.png";
+import img2 from "../assets/images/img2.png";
+import img3 from "../assets/images/img3.png";
+import img4 from "../assets/images/img4.png";
+import img5 from "../assets/images/img5.png";
+import img6 from "../assets/images/img6.png";
+import img8 from "../assets/images/img8.png";
+import img9 from "../assets/images/img9.png";
 
 export default function ImageSection() {
   useInView();
@@ -20,19 +28,19 @@ export default function ImageSection() {
           <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
             <div className="img">
               <div>
-                <Img></Img>
-                <Img className="center"></Img>
-                <Img></Img>
+                <Img src={img1} alt="img1"></Img>
+                <Img className="center" src={img2} alt="img2"></Img>
+                <Img src={img3} alt="img3"></Img>
               </div>
               <div>
-                <Img></Img>
-                <Img className="center"></Img>
-                <Img></Img>
+                <Img src={img4} alt="img4"></Img>
+                <Img className="center" src={img5} alt="img5"></Img>
+                <Img src={img6} alt="img6"></Img>
               </div>
               <div>
-                <Img></Img>
-                <Img className="center"></Img>
-                <Img></Img>
+                <Img src={img8} alt="img8"></Img>
+                <Img className="center" src={img8} alt="img8"></Img>
+                <Img src={img9} alt="img9"></Img>
               </div>
             </div>
           </InView>
@@ -121,10 +129,10 @@ const Text = styled.h2`
   }
 `;
 
-const Img = styled.div`
+const Img = styled.img`
   width: 200px;
   height: 200px;
-  background-color: #3e3844;
+  /* background-color: #3e3844; */
 
   @media screen and (max-width: 750px) {
     width: 150px;
