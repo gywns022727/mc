@@ -62,7 +62,7 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  color: white;
+  color: #000;
   @media screen and (max-height: 500px) {
     height: 100%;
   }
@@ -82,7 +82,7 @@ const Container = styled.div`
   > table {
     margin: 10px 0;
     text-align: center;
-    border: 1px solid #ffffff;
+    border: 1px solid #000;
     > thead {
       > tr {
         > th {

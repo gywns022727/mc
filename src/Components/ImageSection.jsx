@@ -53,7 +53,7 @@ export default function ImageSection() {
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background: #fff;
 `;
 
 const Container = styled.div`
@@ -132,7 +132,6 @@ const Text = styled.h2`
 const Img = styled.img`
   width: 200px;
   height: 200px;
-  /* background-color: #3e3844; */
 
   @media screen and (max-width: 750px) {
     width: 150px;

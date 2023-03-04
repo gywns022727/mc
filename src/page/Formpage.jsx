@@ -17,7 +17,7 @@ const Wrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: #fff;
 
   @media screen and (max-height: 500px) {
     height: 100%;

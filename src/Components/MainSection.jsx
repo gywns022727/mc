@@ -124,7 +124,7 @@ const MainText = styled.p`
 const SubText = styled.p`
   font-weight: 450;
   font-size: 3rem;
-  color: #eee;
+  color: #727272;
   text-align: center;
 
   @media screen and (max-width: 1000px) {
@@ -137,7 +137,8 @@ const SubText = styled.p`
 `;
 
 const Btn = styled.button`
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   width: 250px;
   height: 70px;
   background: #483f89;

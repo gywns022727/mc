@@ -11,20 +11,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
 body{
-    background: #000;
+    background: #fff;
     overflow-x: hidden;
   }
 
 body::-webkit-scrollbar {
-  width: 10px;
-  background: #000;
-
+  width: 7px;
+  background: #eee;
 }
 
 body::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: #0c0c13;
-  /* background: #ffffff; */
+  background: #808080;
 }
 
 ul, li{

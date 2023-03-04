@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
+import Bk1 from "../assets/images/bk1.jpg";
+import Bk2 from "../assets/images/bk2.jpg";
+import Bk3 from "../assets/images/bk3.jpg";
 
 export default function HopeSection() {
   useInView();
@@ -23,22 +26,19 @@ export default function HopeSection() {
           </TextBox>
           <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
             <ContentBox>
-              <Box>
+              <Box className="bk1">
                 <div className="box">
                   <h3>끈기있는 사람</h3>
-                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
                 </div>
               </Box>
-              <Box>
+              <Box className="bk2">
                 <div className="box">
                   <h3>끈기있는 사람</h3>
-                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
                 </div>
               </Box>
-              <Box>
+              <Box className="bk3">
                 <div className="box">
                   <h3>끈기있는 사람</h3>
-                  <p>프로그래밍은 언제나 문제를 붙잡고 있어야해요.</p>
                 </div>
               </Box>
             </ContentBox>
@@ -52,10 +52,14 @@ export default function HopeSection() {
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background: #000;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 720px), (max-height: 515px) {
+    height: 130vh;
+  }
 `;
 
 const Container = styled.div`
@@ -78,6 +82,23 @@ const ContentBox = styled.div`
   align-items: center;
   @media screen and (max-width: 1100px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 720px), (max-height: 515px) {
+    flex-direction: column;
+  }
+
+  > .bk1 {
+    background-image: url(${Bk1});
+    background-size: cover;
+  }
+  > .bk2 {
+    background-image: url(${Bk2});
+    background-size: cover;
+  }
+  > .bk3 {
+    background-image: url(${Bk3});
+    background-size: cover;
   }
 `;
 
@@ -119,34 +140,23 @@ const Box = styled.div`
   margin: 0 10px 0 10px;
   width: 300px;
   height: 200px;
-  background-color: #eee;
 
   > div {
+    padding-top: 20px;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
     transition: 2s;
     opacity: 0;
   }
 
   > div > h3 {
     opacity: 1;
-    font-size: 35px;
+    font-size: 30px;
     @media screen and (max-width: 300px) {
       font-size: 30px;
-    }
-  }
-
-  > div > p {
-    opacity: 1;
-    font-size: 17px;
-    letter-spacing: -2px;
-
-    @media screen and (max-width: 300px) {
-      font-size: 14px;
     }
   }
 
@@ -158,8 +168,13 @@ const Box = styled.div`
 
   @media screen and (max-width: 780px) {
     width: 350px;
-    height: 200px;
+    height: 250px;
     margin-bottom: 10px;
+  }
+
+  @media screen and (max-width: 720px), (max-height: 515px) {
+    width: 250px;
+    height: 150px;
   }
 
   @media screen and (max-width: 555px) {

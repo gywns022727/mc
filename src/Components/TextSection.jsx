@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
 
 export default function TextSection() {
-  const {} = useInView();
+  useInView();
 
   const Scroll = async () => {
     const test0 = document.getElementsByClassName("text")[0];
@@ -36,7 +36,7 @@ export default function TextSection() {
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background: #fff;
 `;
 
 const Container = styled.div`

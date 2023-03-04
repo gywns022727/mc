@@ -160,7 +160,7 @@ const LodingContent = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
+  background-color: #856c6c;
   z-index: 999;
   display: flex;
   justify-content: center;
@@ -209,9 +209,9 @@ const Header = styled.span`
 
 const Text = styled.p`
   padding: 10px 0;
-  font-weight: 800;
+  font-weight: 600;
   font-size: 20px;
-  color: #ffffff;
+  color: #000;
   letter-spacing: -1px;
 `;
 
