@@ -7,6 +7,7 @@ import img3 from "../assets/images/img3.png";
 import img4 from "../assets/images/img4.png";
 import img5 from "../assets/images/img5.png";
 import img6 from "../assets/images/img6.png";
+import img7 from "../assets/images/img7.png";
 import img8 from "../assets/images/img8.png";
 import img9 from "../assets/images/img9.png";
 
@@ -38,7 +39,7 @@ export default function ImageSection() {
                 <Img src={img6} alt="img6"></Img>
               </div>
               <div>
-                <Img src={img8} alt="img8"></Img>
+                <Img src={img7} alt="img7"></Img>
                 <Img className="center" src={img8} alt="img8"></Img>
                 <Img src={img9} alt="img9"></Img>
               </div>

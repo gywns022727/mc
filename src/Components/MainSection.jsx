@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-// import Bk1 from "../assets/images/bk1.png";
-// import Bk2 from "../assets/images/bk2.png";
-// import Bk3 from "../assets/images/bk3.png";
+import Bk1 from "../assets/images/bk1.jpg";
 
 export default function MainSection() {
   const navigate = useNavigate();
@@ -11,23 +9,19 @@ export default function MainSection() {
     navigate("/privacy");
   };
   return (
-    <Wrap>
-      <Container>
-        <Fake />
-        <ImgContainer></ImgContainer>
-        <Content>
-          <MainText>우리는 MC 입니다.</MainText>
-          <SubText>저희와 함께 할래요?</SubText>
-          <Btn onClick={click}>입부 신청하기</Btn>
-        </Content>
-      </Container>
-    </Wrap>
+    <Container>
+      <ImgContainer />
+      <div>
+        <img src={Bk1} alt="bkimg1" />
+      </div>
+      <Content>
+        <MainText>우리는 MC 입니다.</MainText>
+        <SubText>저희와 함께 할래요?</SubText>
+        <Btn onClick={click}>입부 신청하기</Btn>
+      </Content>
+    </Container>
   );
 }
-const Wrap = styled.div`
-  width: 100vw;
-  height: 100vh;
-`;
 
 const Container = styled.div`
   margin: 0 auto;
@@ -37,6 +31,20 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
+  > div {
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    > img {
+      height: 506px;
+      @media screen and (max-width: 1000px) {
+        height: 50vh;
+      }
+    }
+  }
+
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
@@ -44,46 +52,33 @@ const Container = styled.div`
 
 const ImgContainer = styled.div`
   width: 100vw;
-  height: 400px;
+  height: 500px;
   position: fixed;
   z-index: -5;
-  background-color: #667a8b;
-  /* > ul {
-    margin: 0 auto;
-    width: 1000px;
-    height: 400px;
-    overflow: hidden;
-    background-position: center;
+  display: flex;
+  justify-content: center;
+  background-image: url(${Bk1});
+  background-size: cover;
+  background-position: 0 60%;
+  filter: blur(5px);
 
-    @media screen and (max-width: 1000px) {
-      width: 100%;
-      height: 50vh;
-    }
-  } */
-
-  @media screen and (max-width: 1050px) {
-    width: 100vw;
-    height: 50vh;
-  }
-`;
-
-const Fake = styled.div`
-  width: 1000px;
-  height: 400px;
   @media screen and (max-width: 1000px) {
+    width: 0;
+    height: 0;
+  }
+
+  @media screen and (max-width: 720px) and (max-height: 515px) {
     width: 100vw;
     height: 50vh;
   }
 `;
 
 const Content = styled.div`
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 5;
-
   animation-name: opacity;
   animation-duration: 3000ms;
 
@@ -119,12 +114,16 @@ const MainText = styled.p`
   @media screen and (max-width: 350px) {
     font-size: 2rem;
   }
+
+  @media screen and (max-width: 720px) and (max-height: 515px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const SubText = styled.p`
   font-weight: 450;
   font-size: 3rem;
-  color: #727272;
+  color: #000;
   text-align: center;
 
   @media screen and (max-width: 1000px) {
@@ -133,6 +132,10 @@ const SubText = styled.p`
 
   @media screen and (max-width: 555px) {
     font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: 720px) and (max-height: 515px) {
+    font-size: 1.8rem;
   }
 `;
 
@@ -161,6 +164,12 @@ const Btn = styled.button`
   }
 
   @media screen and (max-width: 350px) {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 720px) and (max-height: 515px) {
     width: 150px;
     height: 50px;
     font-size: 20px;

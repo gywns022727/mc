@@ -57,7 +57,7 @@ const Wrap = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 720px), (max-height: 515px) {
+  @media screen and (max-width: 720px) and (max-height: 515px) {
     height: 130vh;
   }
 `;
@@ -84,7 +84,7 @@ const ContentBox = styled.div`
     flex-direction: column;
   }
 
-  @media screen and (max-width: 720px), (max-height: 515px) {
+  @media screen and (max-width: 720px) and (max-height: 515px) {
     flex-direction: column;
   }
 
@@ -172,7 +172,7 @@ const Box = styled.div`
     margin-bottom: 10px;
   }
 
-  @media screen and (max-width: 720px), (max-height: 515px) {
+  @media screen and (max-width: 720px) and (max-height: 515px) {
     width: 250px;
     height: 150px;
   }
@@ -191,7 +191,7 @@ const Box = styled.div`
 
   @media screen and (max-width: 300px) {
     width: 260px;
-    height: 120px;
+    height: 180px;
     margin-bottom: 10px;
   }
 `;
