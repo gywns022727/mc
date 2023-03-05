@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
-import Bk1 from "../assets/images/bk1.jpg";
-import Bk2 from "../assets/images/bk2.jpg";
-import Bk3 from "../assets/images/bk3.jpg";
 
 export default function HopeSection() {
   useInView();
@@ -87,19 +84,6 @@ const ContentBox = styled.div`
   @media screen and (max-width: 720px) and (max-height: 515px) {
     flex-direction: column;
   }
-
-  > .bk1 {
-    background-image: url(${Bk1});
-    background-size: cover;
-  }
-  > .bk2 {
-    background-image: url(${Bk2});
-    background-size: cover;
-  }
-  > .bk3 {
-    background-image: url(${Bk3});
-    background-size: cover;
-  }
 `;
 
 const TextBox = styled.div`
@@ -140,6 +124,7 @@ const Box = styled.div`
   margin: 0 10px 0 10px;
   width: 300px;
   height: 200px;
+  background-color: #e3e3e3;
 
   > div {
     padding-top: 20px;

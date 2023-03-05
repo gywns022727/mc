@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
-import img1 from "../assets/images/img1.png";
-import img2 from "../assets/images/img2.png";
-import img3 from "../assets/images/img3.png";
-import img4 from "../assets/images/img4.png";
-import img5 from "../assets/images/img5.png";
-import img6 from "../assets/images/img6.png";
-import img7 from "../assets/images/img7.png";
-import img8 from "../assets/images/img8.png";
-import img9 from "../assets/images/img9.png";
+import img1 from "../assets/images/img1.jpeg";
+import img2 from "../assets/images/img2.jpeg";
+import img3 from "../assets/images/img3.jpeg";
+import img4 from "../assets/images/img4.jpeg";
+import img5 from "../assets/images/img5.jpeg";
+import img6 from "../assets/images/img6.jpeg";
+import img7 from "../assets/images/img7.jpeg";
+import img8 from "../assets/images/img8.jpeg";
+import img9 from "../assets/images/img9.jpeg";
 
 export default function ImageSection() {
   useInView();

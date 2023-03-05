@@ -54,7 +54,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.p`
-  font-weight: 1000;
+  font-weight: bold;
   font-size: 4.3rem;
   text-align: center;
   opacity: 0;

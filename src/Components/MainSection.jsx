@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import Bk1 from "../assets/images/bk1.jpg";
+import Bk1 from "../assets/images/bk1.jpeg";
 
 export default function MainSection() {
   const navigate = useNavigate();
