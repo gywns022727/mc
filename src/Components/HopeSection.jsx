@@ -18,10 +18,10 @@ export default function HopeSection() {
     <Wrap>
       <Container>
         <Content>
-          <TextBox>
-            <Text>이런 친구가 왔으면 좋겠어요!&#x2004;&#x2004;</Text>
-          </TextBox>
           <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
+            <TextBox>
+              <Text>이런 친구가 왔으면 좋겠어요!&#x2004;&#x2004;</Text>
+            </TextBox>
             <ContentBox>
               <Box className="bk1">
                 <div className="box">
@@ -77,6 +77,8 @@ const Content = styled.div`
 const ContentBox = styled.div`
   display: flex;
   align-items: center;
+  background-color: #f5f5f5;
+
   @media screen and (max-width: 1100px) {
     flex-direction: column;
   }
@@ -124,7 +126,6 @@ const Box = styled.div`
   margin: 0 10px 0 10px;
   width: 300px;
   height: 200px;
-  background-color: #e3e3e3;
 
   > div {
     padding-top: 20px;

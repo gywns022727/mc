@@ -16,13 +16,7 @@ body{
   }
 
 body::-webkit-scrollbar {
-  width: 7px;
-  background: #eee;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: #808080;
+  display: none;
 }
 
 ul, li{
