@@ -77,7 +77,6 @@ const Content = styled.div`
 const ContentBox = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
 
   @media screen and (max-width: 1100px) {
     flex-direction: column;
@@ -126,6 +125,7 @@ const Box = styled.div`
   margin: 0 10px 0 10px;
   width: 300px;
   height: 200px;
+  background-color: #f5f5f5;
 
   > div {
     padding-top: 20px;
