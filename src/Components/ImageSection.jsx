@@ -97,7 +97,7 @@ const ImgBox = styled.div`
 const Text = styled.h2`
   padding-bottom: 10px;
   font-size: 3rem;
-  background: -webkit-linear-gradient(0deg, #a2396e 0%, #354b7a 100%);
+  background: -webkit-linear-gradient(0deg, #a2396e 10%, #354b7a 100%);
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -106,8 +106,9 @@ const Text = styled.h2`
   ::after {
     content: "";
     position: absolute;
+    right: 0;
     bottom: 0;
-    width: calc(100% - 75px);
+    width: calc(100% - 5px);
     height: 1px;
     background-color: #ebebeb;
     @media screen and (max-width: 300px) {

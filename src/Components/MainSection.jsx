@@ -15,7 +15,7 @@ export default function MainSection() {
         <img src={Bk1} alt="bkimg1" />
       </div>
       <Content>
-        <MainText>우리는 MC 입니다.</MainText>
+        <MainText>We are Mc</MainText>
         <SubText>저희와 함께 할래요?</SubText>
         <Btn onClick={click}>입부 신청하기</Btn>
       </Content>

@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { InView, useInView } from "react-intersection-observer";
+import Study from "../assets/images/study.jpg";
+import Team from "../assets/images/team.jpg";
+import Work from "../assets/images/work.jpg";
 
 export default function HopeSection() {
   useInView();
@@ -20,22 +23,22 @@ export default function HopeSection() {
         <Content>
           <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
             <TextBox>
-              <Text>이런 친구가 왔으면 좋겠어요!&#x2004;&#x2004;</Text>
+              <Text>MC는 이런 활동을 해요!&#x2004;&#x2004;</Text>
             </TextBox>
             <ContentBox>
               <Box className="bk1">
                 <div className="box">
-                  <h3>끈기있는 사람</h3>
+                  <h3>대회 활동</h3>
                 </div>
               </Box>
               <Box className="bk2">
                 <div className="box">
-                  <h3>끈기있는 사람</h3>
+                  <h3>자기개발</h3>
                 </div>
               </Box>
               <Box className="bk3">
                 <div className="box">
-                  <h3>끈기있는 사람</h3>
+                  <h3>팀 프로젝트</h3>
                 </div>
               </Box>
             </ContentBox>
@@ -47,16 +50,12 @@ export default function HopeSection() {
 }
 
 const Wrap = styled.div`
-  width: 100vw;
-  height: 100vh;
+  padding-top: 100px;
+  margin-bottom: 50px;
   background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media screen and (max-width: 720px) and (max-height: 515px) {
-    height: 130vh;
-  }
 `;
 
 const Container = styled.div`
@@ -78,12 +77,28 @@ const ContentBox = styled.div`
   display: flex;
   align-items: center;
 
+  > .bk1 {
+    background-image: url(${Work});
+    background-size: cover;
+  }
+
+  > .bk2 {
+    background-image: url(${Study});
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  > .bk3 {
+    background-image: url(${Team});
+    background-size: cover;
+  }
+
   @media screen and (max-width: 1100px) {
     flex-direction: column;
   }
 
   @media screen and (max-width: 720px) and (max-height: 515px) {
-    flex-direction: column;
+    flex-direction: row;
   }
 `;
 
@@ -121,7 +136,6 @@ const Text = styled.p`
 `;
 
 const Box = styled.div`
-  padding: 30px;
   margin: 0 10px 0 10px;
   width: 300px;
   height: 200px;
@@ -140,9 +154,10 @@ const Box = styled.div`
 
   > div > h3 {
     opacity: 1;
-    font-size: 30px;
+    color: #000;
+    font-size: 25px;
     @media screen and (max-width: 300px) {
-      font-size: 30px;
+      font-size: 25px;
     }
   }
 
@@ -159,7 +174,7 @@ const Box = styled.div`
   }
 
   @media screen and (max-width: 720px) and (max-height: 515px) {
-    width: 250px;
+    width: 210px;
     height: 150px;
   }
 
@@ -176,8 +191,8 @@ const Box = styled.div`
   }
 
   @media screen and (max-width: 300px) {
-    width: 260px;
-    height: 180px;
+    width: 230px;
+    height: 120px;
     margin-bottom: 10px;
   }
 `;

@@ -24,8 +24,8 @@ export default function TextSection() {
       <Container>
         <InView as="div" onChange={(inView) => (inView ? Scroll() : "")}>
           <Text className="text">MC는 전공심화 동아리 입니다.&#x2004;</Text>
-          <Text className="text">MC는 함께하는 동아리 입니다.&#x2004;</Text>
-          <Text className="text">MC는 같이하는 동아리 입니다.&#x2004;</Text>
+          <Text className="text">MC는 자유로운 동아리 입니다.&#x2004;</Text>
+          <Text className="text">MC는 자기개발 동아리 입니다.&#x2004;</Text>
           <Text className="text">MC는 가족같은 동아리 입니다.&#x2004;</Text>
         </InView>
       </Container>
