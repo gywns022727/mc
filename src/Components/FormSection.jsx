@@ -40,7 +40,6 @@ export default function Form() {
     if (!check.current) {
       check.current = true;
       let sendData = await sendFormData({ ...data });
-      console.log(sendData);
       if (sendData.status === 200) {
         window.scrollTo(0, 0);
         notify();
@@ -160,7 +159,6 @@ const LodingContent = styled.div`
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: #856c6c;
   z-index: 999;
   display: flex;
   justify-content: center;
